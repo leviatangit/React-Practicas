@@ -2,18 +2,23 @@ import React from 'react';
 
 class Item extends React.Component {
   
+  state = { isChecked : false } 
+
   render() {
-    const class_ = this.props.isChecked == true ? 'checked' : 'unchecked';
+    const className = this.state.isChecked ? this.props.classNames.checked : this.props.classNames.unchecked;    
     let text = this.props.value || (Math.random() * 10000);
     return (
-      <li className={class_}> {text} </li>
+      <li className={className}> {text} </li>
     )
   }
 }
 
 Item.defaultProps = 
 {
-  isChecked : false
+  classNames : {
+    checked : 'checked',
+    unchecked : 'unchecked',
+  }
 }
 
 

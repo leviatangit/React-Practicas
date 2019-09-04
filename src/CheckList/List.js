@@ -9,6 +9,17 @@ import Item from './Item';
 
 class List extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state = { nombre: '' }
+
+    setInterval(() => {
+      let randomName = parseInt(Math.random() * 100000);
+      this.setState({ nombre : randomName })
+    }, 500);
+
+  }
+
   render() {
 
     return (
@@ -16,10 +27,11 @@ class List extends React.Component {
         <ul>
         <Item 
           isChecked={true}
+          value={this.state.nombre}
         />
 
         <Item
-          value="Item 2"
+          value={this.state.nombre}
           isChecked={false}
         />          
         </ul>  

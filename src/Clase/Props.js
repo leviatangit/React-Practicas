@@ -2,38 +2,43 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// React Props
+/**
+ * --------- Props ---------
+ * 
+ * - La Props son inmutables: no se puede modificar su valor 
+ * - Para definir un valor por defecto a las propiedades, se se Component.defaultProps = {};
+ * 
+ * 
+ */
 
-// function Hello(props)
-// {
-// return <h2>  {props.title} </h2>
-// }
 
-
-// const Hello = (props) => { return <h2> {props.title} </h2> }
-
-class Hello extends React.Component {
+class Titulo extends React.Component {
   render() {
     return <h2> {this.props.title} </h2>
   }
 }
 
-class Text extends React.Component {
-  render() {
+class PersonaCard extends React.Component {
+  render() {    
+
     const nombreCompleto = this.props.nombre + " " + this.props.apellido;
+
     return (
-      <div>
+      <div className="Persona-Card">
         <p>  {this.props.edad} </p>
         <p>  {this.props.nombre} </p>
         <p>  {this.props.apellido} </p>
         <p> Nombre Completo: {nombreCompleto} </p>
         <p> {this.props.edad > 18 ? "Mayor de edad" : "Menor de edad"}</p>
-
       </div>
     )
   }
 }
 
+// Definir valores de la props por defecto
+PersonaCard.defaultProps = {
+
+};
 
 
 function App() {
@@ -42,23 +47,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <Hello
+        <Titulo
           title='Hola mundo desde props' />
 
-        <Text
+        <PersonaCard
           edad="1"
           nombre={'Gabriel'}
           apellido={'Crespo'}
         />
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
