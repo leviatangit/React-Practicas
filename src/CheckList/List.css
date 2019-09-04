@@ -1,0 +1,46 @@
+.App-Listado 
+{
+  
+}
+
+.App-Listado ul
+{
+  list-style: none;
+  border: 1px solid black;
+  width: 300px;
+  margin: 10px auto;
+  padding: 0;
+  text-align: center;
+}
+
+
+.App-Listado ul li
+{
+  padding: 5px 2px;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+.App-Listado ul li.checked:hover
+{
+    background-color: transparent;
+}
+
+.App-Listado ul li:last-child
+{
+  padding: 5px 2px;
+  border-bottom: none;
+  
+}
+
+.App-Listado ul li.checked
+{
+  background-color: #e1e1e1;
+  text-decoration: line-through;
+  color: #626262;
+}
+
+.App-Listado ul li.unchecked
+{
+  
+}
