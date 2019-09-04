@@ -3,39 +3,22 @@ import React from 'react';
 import './App.css';
 import './CheckList/List.css';
 import List from './CheckList/List';
+import PersonaCard from './Clase/Props';
 
 class App extends React.Component {
   render(){
-    return (<List />)
+    return <PersonaCard 
+      nombre='Gabriel'
+      apellido='Crespo'
+      edad={10}
+      mostrarDireccion={false}
+      isHombre
+      familiares={["Marlin", "Pepito", "John", "Doe"]}
+      infoAdicional={{ telf: '0900127885' , trabajo: 'Programador web' }}
+      direccion="San juan de los morros"
+    />
+    // return (<List />)
   }
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-
-//         <Hello 
-//         title='Hola mundo desde props' />
-
-//         <Text
-//         edad="1"
-//         nombre={'Gabriel'}
-//         apellido={'Crespo'}
-//         />
-
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

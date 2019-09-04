@@ -1,35 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 /**
  * --------- Props ---------
  * 
  * - La Props son inmutables: no se puede modificar su valor 
  * - Para definir un valor por defecto a las propiedades, se se Component.defaultProps = {};
- * 
- * 
+ * - Cuando declaramos una propiedad pero esta no tiene valor, su valor por defecto sera true
+ * - Para pasar booleanos, numero, array y objetos tiene que ser por llaves
+ * - Tambien se peude pasar funciones y otros elementos
  */
 
-
-class Titulo extends React.Component {
-  render() {
-    return <h2> {this.props.title} </h2>
+class ParrafoInfo extends React.Component {
+  render(){
+    return (
+      <p> 
+        <span className="Attributo"> {this.props.atributo} </span> 
+        <span className="Valor">{this.props.valor} </span>  
+      </p>
+    )
   }
 }
 
 class PersonaCard extends React.Component {
   render() {    
+    console.log( this.props );
 
-    const nombreCompleto = this.props.nombre + " " + this.props.apellido;
+    // Destructurar
+    const {
+      nombre,
+      apellido, 
+      mostrarDireccion,
+      edad,
+      direccion,
+      familiares,
+      infoAdicional
+    } = this.props
 
+    const nombreCompleto = nombre + " " + apellido; 
+    const anoNacimiento = new Date().getFullYear() - edad;
     return (
       <div className="Persona-Card">
-        <p>  {this.props.edad} </p>
-        <p>  {this.props.nombre} </p>
-        <p>  {this.props.apellido} </p>
-        <p> Nombre Completo: {nombreCompleto} </p>
-        <p> {this.props.edad > 18 ? "Mayor de edad" : "Menor de edad"}</p>
+        <ParrafoInfo atributo='Nombre Completo' valor={nombreCompleto} />
+        <ParrafoInfo atributo='Edad' valor={nombreCompleto} />
+        <ParrafoInfo atributo='Año de nacimiento' valor={anoNacimiento} />
+        <ParrafoInfo atributo='Direccion' valor={direccion} />
+        <ParrafoInfo atributo='Familiares' valor={familiares.join(', ')} />
+        <ParrafoInfo atributo='Trabajo' valor={infoAdicional.trabajo} />
       </div>
     )
   }
@@ -37,28 +53,9 @@ class PersonaCard extends React.Component {
 
 // Definir valores de la props por defecto
 PersonaCard.defaultProps = {
-
+  mostrarDireccion: false,
+  direccion : '',
 };
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <Titulo
-          title='Hola mundo desde props' />
-
-        <PersonaCard
-          edad="1"
-          nombre={'Gabriel'}
-          apellido={'Crespo'}
-        />
-
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export default PersonaCard;
