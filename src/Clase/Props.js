@@ -3,14 +3,14 @@ import React from 'react';
 /**
  * --------- Props ---------
  * 
- * - La Props son inmutables: no se puede modificar su valor 
+ * - Los componentes actual como funciones impuras, las props que le pasamos son inmutables: no se puede modificar su valor 
  * - Para definir un valor por defecto a las propiedades, se se Component.defaultProps = {};
  * - Cuando declaramos una propiedad pero esta no tiene valor, su valor por defecto sera true
  * - Para pasar booleanos, numero, array y objetos tiene que ser por llaves
  * - Tambien se peude pasar funciones y otros elementos
  */
 
-class ParrafoInfo extends React.Component {
+ class ParrafoInfo extends React.Component {
   render(){
     return (
       <p> 
@@ -21,7 +21,18 @@ class ParrafoInfo extends React.Component {
   }
 }
 
-class PersonaCard extends React.Component {
+class DivInfo extends React.Component {
+  render() {
+    return (
+      <div>
+        <strong className="Attributo"> {this.props.atributo}: </strong>
+        <span className="Valor">{this.props.valor} </span>
+      </div>
+    )
+  }
+}
+
+ class PersonaCard extends React.Component {
   render() {    
     console.log( this.props );
 
@@ -37,12 +48,12 @@ class PersonaCard extends React.Component {
     } = this.props
 
     const nombreCompleto = nombre + " " + apellido; 
-    const anoNacimiento = new Date().getFullYear() - edad;
     return (
       <div className="Persona-Card">
+        {this.props.titulo}
         <ParrafoInfo atributo='Nombre Completo' valor={nombreCompleto} />
         <ParrafoInfo atributo='Edad' valor={nombreCompleto} />
-        <ParrafoInfo atributo='Año de nacimiento' valor={anoNacimiento} />
+        <ParrafoInfo atributo='Año de nacimiento' valor={this.props.procesarEdad(edad)} />
         <ParrafoInfo atributo='Direccion' valor={direccion} />
         <ParrafoInfo atributo='Familiares' valor={familiares.join(', ')} />
         <ParrafoInfo atributo='Trabajo' valor={infoAdicional.trabajo} />
@@ -54,7 +65,7 @@ class PersonaCard extends React.Component {
 // Definir valores de la props por defecto
 PersonaCard.defaultProps = {
   mostrarDireccion: false,
-  direccion : '',
+  direccion : '',  
 };
 
 

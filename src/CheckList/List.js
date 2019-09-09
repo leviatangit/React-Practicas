@@ -25,15 +25,17 @@ class List extends React.Component {
     return (
       <div className="App-Listado">
         <ul>
-        <Item 
-          isChecked={true}
-          value={this.state.nombre}
-        />
 
-        <Item
-          value={this.state.nombre}
-          isChecked={false}
-        />          
+          <Item
+            isChecked={true}
+            value={this.state.nombre}
+          />
+
+          <Item
+            value={this.state.nombre}
+            isChecked={false}
+          />
+
         </ul>  
       </div>
     )
