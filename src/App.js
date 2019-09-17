@@ -9,9 +9,10 @@ import Conditional from './Clase/Condicionales';
 import Lista from './Clase/Lista';
 
 class App extends React.Component {
-  
+
   // Condicionales
-  render(){
+
+  render() {
     return <Lista />
   }
 
@@ -19,7 +20,6 @@ class App extends React.Component {
   // render(){
   //   return <Conditional />
   // }
-
 
 
   // State
@@ -32,19 +32,19 @@ class App extends React.Component {
 
 
 
-    // Props
-    // return <PersonaCard 
-    //   nombre='Gabriel'
-    //   apellido='Crespo'
-    //   edad={10}
-    //   mostrarDireccion={false}
-    //   isHombre
-    //   familiares={["Marlin", "Pepito", "John", "Doe"]}
-    //   infoAdicional={{ telf: '0900127885' , trabajo: 'Programador web' }}
-    //   direccion="San juan de los morros"
-    //   procesarEdad={ (edad) => new Date().getFullYear() - edad}
-    //   titulo={<h1> Titulo </h1>}
-    // />
+  // Props
+  // return <PersonaCard 
+  //   nombre='Gabriel'
+  //   apellido='Crespo'
+  //   edad={10}
+  //   mostrarDireccion={false}
+  //   isHombre
+  //   familiares={["Marlin", "Pepito", "John", "Doe"]}
+  //   infoAdicional={{ telf: '0900127885' , trabajo: 'Programador web' }}
+  //   direccion="San juan de los morros"
+  //   procesarEdad={ (edad) => new Date().getFullYear() - edad}
+  //   titulo={<h1> Titulo </h1>}
+  // />
 }
 
 export default App;
