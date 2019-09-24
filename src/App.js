@@ -2,18 +2,18 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import './CheckList/List.css';
-import List from './CheckList/List';
 import PersonaCard from './Clase/Props';
 import Contador from './Clase/States';
 import Conditional from './Clase/Condicionales';
-import Lista from './Clase/Lista';
+import itemsJson from './CheckList/JsonList'
+import List from './CheckList/List';
+// import Lista from './Clase/Lista';
+
 
 class App extends React.Component {
 
-  // Condicionales
-
   render() {
-    return <Lista />
+    return <List items={itemsJson} />
   }
 
 

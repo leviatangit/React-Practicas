@@ -4,7 +4,7 @@ import React from 'react'
 function buttonsToShow(btnsToShow)
 {
   let buttons = {
-    'create': <a key="create"> Crear </a>,
+    'create': <a onClick={""} key="create"> Crear </a>,
     'clean': <a key="clean"> Clean </a>,
     'edit': <a key="edit"> Edit </a>,
     'guardar': <a key="guardar"> Guardar </a>,
@@ -16,13 +16,20 @@ function buttonsToShow(btnsToShow)
 
 class FormItem extends React.Component
 {
+  openToModify(e){
+    let newDescripcion = "X: " + e.nativeEvent.pageX + ' Y:' + e.nativeEvent.pageY;
+    this.setState({
+      description : newDescripcion
+    })
+  }
+
   constructor(props){
     super(props)
-    this.state.setState({
+    this.state = {
       description: this.props.description,
       isOpen: this.props.opened,
       buttonsActions: this.props.buttonsActions
-    })
+    }
   }
 
   render(){
@@ -32,14 +39,12 @@ class FormItem extends React.Component
           <input 
           className="form-control"
           value={this.state.description} 
-          {this.state.isOpen ? 'readonly=readonly' : ''} 
+          readOnly={this.state.isOpen} 
           />
         </div>
-
-        <div className="actions-button">
+        <div onClick={this.openToModify.bind(this)} className="actions-button">
           {buttonsToShow(this.state.buttonsActions)}
         </div>
-
       </div>
     )
   }
@@ -50,3 +55,5 @@ FormItem.defaultProps = {
   description: '',
   buttonsActions : ['create']
 }
+
+export default FormItem;
