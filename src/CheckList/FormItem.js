@@ -3,7 +3,7 @@ import React from 'react'
 function buttonsToShow(btnsToShow)
 {
   let buttons = {
-    'create': <a key="create"> Crear </a>,
+    'create': <a onClick={""} key="create"> Crear </a>,
     'clean': <a key="clean"> Clean </a>,
     'edit': <a key="edit"> Edit </a>,
     'guardar': <a key="guardar"> Guardar </a>,
@@ -15,6 +15,7 @@ function buttonsToShow(btnsToShow)
 
 class FormItem extends React.Component
 {
+<<<<<<< HEAD
   handleClick(e){
     this.setState({
       description : new Date().getMilliseconds()
@@ -24,6 +25,17 @@ class FormItem extends React.Component
   constructor(props){
     super(props)
 
+=======
+  openToModify(e){
+    let newDescripcion = "X: " + e.nativeEvent.pageX + ' Y:' + e.nativeEvent.pageY;
+    this.setState({
+      description : newDescripcion
+    })
+  }
+
+  constructor(props){
+    super(props)
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
     this.state = {
       description: this.props.description,
       isOpen: this.props.opened,
@@ -36,13 +48,19 @@ class FormItem extends React.Component
     return (
       <div className="form-item">
         <div className="input-ele">
+<<<<<<< HEAD
           <input onClick={this.handleClick.bind(this)} className="form-control" value={this.state.description}  />
+=======
+          <input 
+          className="form-control"
+          value={this.state.description} 
+          readOnly={this.state.isOpen} 
+          />
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
         </div>
-
-        <div className="actions-button">
+        <div onClick={this.openToModify.bind(this)} className="actions-button">
           {buttonsToShow(this.state.buttonsActions)}
         </div>
-
       </div>
     )
   }
@@ -54,5 +72,8 @@ FormItem.defaultProps = {
   buttonsActions : ['create']
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
 export default FormItem;

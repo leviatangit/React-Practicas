@@ -28,7 +28,11 @@ class List extends React.Component {
         {this.props.openToCreated ? <FormItem /> : ''}
         
         {/* Iteracion de items */}
+<<<<<<< HEAD
         { this.state.items.map(  (value, index) => <FormItem description={value.descripcion} /> ) }
+=======
+        {this.state.items.map((value, index) => <FormItem description={value.descripcion} />  )}}
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
             
       </div>
     )

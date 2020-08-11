@@ -2,20 +2,31 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import './CheckList/List.css';
-import List from './CheckList/List';
 import PersonaCard from './Clase/Props';
 import Contador from './Clase/States';
 import Conditional from './Clase/Condicionales';
+<<<<<<< HEAD
 import Lista from './Clase/Lista';
 import listados from './CheckList/JsonList';
 
 // console.log(listados);
+=======
+import itemsJson from './CheckList/JsonList'
+import List from './CheckList/List';
+// import Lista from './Clase/Lista';
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
 
-class App extends React.Component {
 
+<<<<<<< HEAD
   // Condicionales
   render() {
     return <List items={listados} />
+=======
+class App extends React.Component {
+
+  render() {
+    return <List items={itemsJson} />
+>>>>>>> ec0bb582aaffaf2fd580f6596fa28b48a4babd8c
   }
 
   // render(){
