@@ -3,10 +3,7 @@ import React, {Component } from 'react';
 export default class Listado extends Component {
   
   render(){
-    
-    const personas = [ "Gabriel" , "Luis" , "John" ];
-    return (
-      { personas.map( (value,index) => {<p key={index}> Mi Nombre es: {value}</p>)}}
-    )
+    let personas = [ "Gabriel" , "Luis" , "John" ].map( (value,index) => { return <li key={index}> {value} </li> });
+    return <ul> {personas} </ul>
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function buttonsToShow(btnsToShow)
 {
   let buttons = {
@@ -16,24 +15,28 @@ function buttonsToShow(btnsToShow)
 
 class FormItem extends React.Component
 {
+  handleClick(e){
+    this.setState({
+      description : new Date().getMilliseconds()
+    });
+    console.log("HanDle click" , e);
+  }
   constructor(props){
     super(props)
-    this.state.setState({
+
+    this.state = {
       description: this.props.description,
       isOpen: this.props.opened,
       buttonsActions: this.props.buttonsActions
-    })
+    }
   }
 
   render(){
+    console.log("this",this)
     return (
       <div className="form-item">
         <div className="input-ele">
-          <input 
-          className="form-control"
-          value={this.state.description} 
-          {this.state.isOpen ? 'readonly=readonly' : ''} 
-          />
+          <input onClick={this.handleClick.bind(this)} className="form-control" value={this.state.description}  />
         </div>
 
         <div className="actions-button">
@@ -50,3 +53,6 @@ FormItem.defaultProps = {
   description: '',
   buttonsActions : ['create']
 }
+
+
+export default FormItem;

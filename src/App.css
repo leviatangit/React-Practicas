@@ -31,3 +31,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App-Listado {
+  margin: 10px auto;
+  width: 500px;
+  border: 1px solid gray;
+  padding: 10px;
+  box-shadow: 0 0 10px 4px #ccc;
+}
+
+.form-item {
+  /*! overflow: hidden; */
+}
+
+.input-ele {
+  display: inline-block;
+}
+
+.form-item , .input-ele {
+}
+
+
+
+.actions-button {
+  display: inline-block;
+}

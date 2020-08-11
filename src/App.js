@@ -7,15 +7,16 @@ import PersonaCard from './Clase/Props';
 import Contador from './Clase/States';
 import Conditional from './Clase/Condicionales';
 import Lista from './Clase/Lista';
+import listados from './CheckList/JsonList';
+
+// console.log(listados);
 
 class App extends React.Component {
 
   // Condicionales
-
   render() {
-    return <Lista />
+    return <List items={listados} />
   }
-
 
   // render(){
   //   return <Conditional />
